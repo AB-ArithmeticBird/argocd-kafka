@@ -1,2 +1,2 @@
 # argocd-kafka
-experimentation with argocd 
+Experimentation with argocd 
