@@ -23,5 +23,8 @@ spec:
           ports:
             - name: http
               containerPort: 1337
+          envFrom:
+            - configMapRef:
+                name: connect-config
       imagePullSecrets:
         - name: ghcr

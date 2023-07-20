@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: connect-config
+data:
+  BOOTSTRAP_SERVERS: "apk-cluster-kafka-bootstrap:9092"
+  GROUP_ID: "my-connect"
+  CONNECT_PRODUCER_COMPRESSION_TYPE: "lz4"
+  ADVERTISED_HOST_NAME: "my-connect"
+  ADVERTISED_PORT: "8083"
+  CONFIG_STORAGE_TOPIC: "my-connect-configs"
+  CONNECT_CONFIG_STORAGE_REPLICATION_FACTOR: "3"
+  OFFSET_STORAGE_TOPIC: "my-connect-offsets"
+  CONNECT_OFFSET_STORAGE_REPLICATION_FACTOR: "3"
+  STATUS_STORAGE_TOPIC: "my-connect-status"
+  CONNECT_STATUS_STORAGE_REPLICATION_FACTOR: "3"
+  KEY_CONVERTER: "org.apache.kafka.connect.json.JsonConverter"
+  VALUE_CONVERTER: "org.apache.kafka.connect.json.JsonConverter"
+  INTERNAL_KEY_CONVERTER: "org.apache.kafka.connect.json.JsonConverter"
+  INTERNAL_VALUE_CONVERTER: "org.apache.kafka.connect.json.JsonConverter"
