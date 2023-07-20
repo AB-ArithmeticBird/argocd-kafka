@@ -2,6 +2,9 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: connect-config
+  namespace: default
+  labels:
+    app: connect-app-config
 data:
   BOOTSTRAP_SERVERS: "apk-cluster-kafka-bootstrap:9092"
   GROUP_ID: "my-connect"
