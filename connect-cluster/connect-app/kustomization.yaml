@@ -4,6 +4,7 @@ resources:
   - deployment.yaml
   - service.yaml
   - namespace.yaml
+  - configmap.yaml
 namespace: default
 images:
   - name:  connect-app
