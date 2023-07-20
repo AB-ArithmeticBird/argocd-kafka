@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: connect-app
+  namespace: connect
+  labels:
+    app: connect-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: connect-app
+  template:
+    metadata:
+      labels:
+        app: connect-app
+    spec:
+      nodeSelector:
+        "beta.kubernetes.io/os": linux
+      containers:
+        - name: connect-app
+          image: zattoo-connect:latest
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 1337
