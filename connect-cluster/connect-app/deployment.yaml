@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: connect-app
-  namespace: connect
+  namespace: default
   labels:
     app: connect-app
 spec:

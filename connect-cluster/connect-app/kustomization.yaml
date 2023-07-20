@@ -4,7 +4,7 @@ resources:
   - deployment.yaml
   - service.yaml
   - namespace.yaml
-namespace: nodejs
+namespace: default
 images:
   - name:  connect-app
     newName:  connect-app
