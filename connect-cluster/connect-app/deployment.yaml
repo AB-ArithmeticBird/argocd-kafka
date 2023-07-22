@@ -4,7 +4,7 @@ metadata:
   name: connect-app
   namespace: default
   labels:
-    app: connect-app
+    app: kafka-connect-app
 spec:
   replicas: 1
   selector:
