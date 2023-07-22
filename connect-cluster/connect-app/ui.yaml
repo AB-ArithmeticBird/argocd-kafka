@@ -9,8 +9,12 @@ data:
   config.yml: |-
     kafka:
       clusters:
-        - name: yaml
+        - name: apk-cluster
           bootstrapServers: "apk-cluster-kafka-bootstrap:9092"
+    kafka-connect:
+      clusters:
+        - name: apk-connect-cluster
+          url: "http://connect-app:8083"      
     auth:
       type: disabled
     management:
