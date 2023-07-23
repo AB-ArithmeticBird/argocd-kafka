@@ -6,12 +6,12 @@ metadata:
   labels:
     app: schema-registry-config
 data:
-  SCHEMA_REGISTRY_HOST_NAME: "schema-registry"
+  SCHEMA_REGISTRY_HOST_NAME: "my-schema-registry"
   SCHEMA_REGISTRY_LISTENERS: "http://0.0.0.0:8081"
   SCHEMA_REGISTRY_MASTER_ELIGIBILITY: "true"
   SCHEMA_REGISTRY_DEBUG: "true"
   SCHEMA_REGISTRY_HEAP_OPTS: "-Xmx512M -Xmx2G"
-  SCHEMA_REGISTRY_KAFKASTORE_GROUP_ID: "schema-registry"
-  SCHEMA_REGISTRY_KAFKASTORE_TOPIC: "schema-registry"
+  SCHEMA_REGISTRY_KAFKASTORE_GROUP_ID: "my-schema-registry"
+  SCHEMA_REGISTRY_KAFKASTORE_TOPIC: "my-schema-registry"
   SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS: "apk-cluster-kafka-bootstrap:9092"
   SCHEMA_REGISTRY_KAFKASTORE_CONNECTION_URL: "apk-cluster-kafka-bootstrap:9092"
