@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: schema-registry
+  namespace: default
+  labels:
+    app: schema-registry
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: schema-registry
+  template:
+    metadata:
+      labels:
+        app: schema-registry
+    spec:
+      nodeSelector:
+        "beta.kubernetes.io/os": linux
+      containers:
+        - name: connect-app
+          image:  confluentinc/cp-schema-registry:6.0.1
+          ports:
+            - name: tcp
+              containerPort: 8081
+          envFrom:
+            - configMapRef:
+                name: schema-registry-config
