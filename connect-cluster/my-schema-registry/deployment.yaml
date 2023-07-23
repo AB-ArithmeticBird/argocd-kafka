@@ -1,10 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: schema-registry
+  name: my-schema-registry
   namespace: default
   labels:
-    app: schema-registry
+    app: my-schema-registry
 spec:
   replicas: 1
   selector:
