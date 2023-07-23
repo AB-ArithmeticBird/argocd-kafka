@@ -11,7 +11,7 @@ data:
       clusters:
         - name: apk-cluster
           bootstrapServers: "apk-cluster-kafka-bootstrap:9092"
-          schemaRegistry: "http://schema-registry:8081"
+          schemaRegistry: "http://my-schema-registry:8081"
           kafkaConnect:
             - address: "http://connect-app:8083"
               name: "connect-app"
