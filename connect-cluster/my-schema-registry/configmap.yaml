@@ -14,4 +14,3 @@ data:
   SCHEMA_REGISTRY_KAFKASTORE_GROUP_ID: "my-schema-registry"
   SCHEMA_REGISTRY_KAFKASTORE_TOPIC: "my-schema-registry"
   SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS: "apk-cluster-kafka-bootstrap:9092"
-  SCHEMA_REGISTRY_KAFKASTORE_CONNECTION_URL: "apk-cluster-kafka-bootstrap:9092"
