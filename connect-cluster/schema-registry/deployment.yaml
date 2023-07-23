@@ -9,16 +9,16 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: schema-registry
+      app: my-schema-registry
   template:
     metadata:
       labels:
-        app: schema-registry
+        app: my-schema-registry
     spec:
       nodeSelector:
         "beta.kubernetes.io/os": linux
       containers:
-        - name: schema-registry
+        - name: my-schema-registry
           image:  confluentinc/cp-schema-registry:6.0.1
           imagePullPolicy: IfNotPresent
           envFrom:
