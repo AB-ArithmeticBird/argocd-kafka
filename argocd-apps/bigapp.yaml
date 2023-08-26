@@ -12,3 +12,4 @@ spec:
   destination:
     name: in-cluster
     namespace: default
+
