@@ -19,7 +19,7 @@ spec:
         "beta.kubernetes.io/os": linux
       containers:
         - name: connect-app
-          image: ghcr.io/ab-arithmeticbird/argocd-kafka/abird-connect:0.7
+          image: ghcr.io/ab-arithmeticbird/argocd-kafka/abird-connect:0.8
           imagePullPolicy: Always
           ports:
             - name: http
