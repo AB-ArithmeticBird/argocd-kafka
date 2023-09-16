@@ -10,11 +10,9 @@ spec:
       targetRevision: main
       path: helm/flink-kubernetes-operator
     helm:
-      values: |
-          image:
-            repository: ghcr.io/apache/flink-kubernetes-operator
-            pullPolicy: IfNotPresent            
-            tag: main # defaults to the Chart.appVersion
+      values:
+        valueFiles:
+          - values.yaml
     destination:
       name: in-cluster
       namespace: 'argocd'
