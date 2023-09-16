@@ -6,9 +6,9 @@ metadata:
 spec:
     project: default
     source:
-      repoURL: https://downloads.apache.org/flink/flink-kubernetes-operator-1.6.0/
-      chart: flink-kubernetes-operator
-      targetRevision: 1.6.0
+      repoURL: https://github.com/apache/flink-kubernetes-operator
+      targetRevision: main
+      path: helm/flink-kubernetes-operator
     destination:
       name: in-cluster
       namespace: 'argocd'
