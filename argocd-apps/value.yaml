@@ -1,7 +1,8 @@
 ---
+  flink-operator:
+    image:
+      repository: ghcr.io/apache/flink-kubernetes-operator
+      pullPolicy: IfNotPresent
+      tag: main
 
-image:
-  repository: ghcr.io/apache/flink-kubernetes-operator
-  pullPolicy: IfNotPresent
-  tag: main
 
