@@ -10,7 +10,7 @@ spec:
       targetRevision: main
       path: helm/flink-kubernetes-operator
     helm:
-      values:
+      values: |
         flinkOperator:
           image:
             repository: ghcr.io/apache/flink-kubernetes-operator
