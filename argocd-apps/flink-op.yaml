@@ -9,6 +9,82 @@ spec:
       repoURL: https://github.com/apache/flink-kubernetes-operator
       targetRevision: main
       path: helm/flink-kubernetes-operator
+    helm:
+      values:
+        flinkOperator:
+          image:
+            repository: apache/flink-kubernetes-operator
+            tag: 1.4.0
+          jobmanager:
+            replicas: 1
+            resources:
+              requests:
+                memory: 1Gi
+                cpu: 1
+              limits:
+                memory: 1Gi
+                cpu: 1
+          taskmanager:
+            replicas: 1
+            resources:
+              requests:
+                memory: 1Gi
+                cpu: 1
+              limits:
+                memory: 1Gi
+                cpu: 1
+          flink:
+            image:
+              repository: apache/flink
+              tag: 1.13.2-scala_2.12-java11
+            jobmanager:
+              resources:
+                requests:
+                  memory: 1Gi
+                  cpu: 1
+                limits:
+                  memory: 1Gi
+                  cpu: 1
+            taskmanager:
+              resources:
+                requests:
+                  memory: 1Gi
+                  cpu: 1
+                limits:
+                  memory: 1Gi
+                  cpu: 1
+            job:
+              parallelism: 1
+              restartPolicy: Never
+              backoff:
+                delay: 10
+                maxDelay: 300
+                maxAttempts: 10
+            savepoints:
+              enabled: true
+              directory: /opt/flink/savepoints
+              interval: 300
+              timeout: 600
+            metrics:
+              reporter:
+                prometheus:
+                  enabled: true
+                  port: 9250
+                  serviceMonitor:
+                    enabled: true
+                    additionalLabels:
+                      release: prometheus-operator
+                      environment: dev
+                      team: devops
+                      app: flink
+                      component: jobmanager
+                      instance: flink-operator
+                      job: flink-operator
+                      kubernetes_namespace: argocd
+                      kubernetes_pod_name: flink-kubernetes-operator-0
+                      kubernetes_pod_uid: 0a0a0a0a-0a0a-0a0a-0a0a-0a0a0a0a0a0a
+                      kubernetes_pod_ip:
+
     destination:
       name: in-cluster
       namespace: 'argocd'
