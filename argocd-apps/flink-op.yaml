@@ -7,7 +7,7 @@ spec:
     project: default
     source:
       repoURL: https://github.com/apache/flink-kubernetes-operator
-      targetRevision: 'v1_18'
+      targetRevision: main
       path: helm/flink-kubernetes-operator
     destination:
       name: in-cluster
