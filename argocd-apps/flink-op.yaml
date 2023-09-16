@@ -7,6 +7,7 @@ spec:
     project: default
     source:
       repoURL: https://github.com/apache/flink-kubernetes-operator
+      path: helm/flink-kubernetes-operator
       chart: flink-kubernetes-operator
       targetRevision: 1.6.0
     destination:
