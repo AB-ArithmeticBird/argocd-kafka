@@ -13,8 +13,8 @@ spec:
       values:
         flinkOperator:
           image:
-            repository: apache/flink-kubernetes-operator
-            tag: latest # defaults to the Chart.appVersion
+            repository:  ghcr.io/apache/flink-kubernetes-operator
+            tag: main # defaults to the Chart.appVersion
           jobmanager:
             replicas: 1
             resources:
