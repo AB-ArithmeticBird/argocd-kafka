@@ -1,29 +1,6 @@
 ---
   flink-operator:
-    image:
-      repository: ghcr.io/apache/flink-kubernetes-operator
-      pullPolicy: IfNotPresent
-      tag: main
-    serviceAccount:
-        create: true
-        name: flink-operator
-    rbac:
-        create: true
-    resources:
-        limits:
-            cpu: 1
-            memory: 1Gi
-        requests:
-            cpu: 0.1
-            memory: 0.1Gi
-    podSecurityContext:
-        fsGroup: 9999
-    securityContext:
-        runAsUser: 9999
-    priorityClassName: ""
-    nodeSelector: {}
-    tolerations: []
-    affinity: {}
+    imagePath:ghcr.io/apache/flink-kubernetes-operator:main
 
 
 
