@@ -1,25 +1,21 @@
-#apiVersion: argoproj.io/v1alpha1
-#kind: Application
-#metadata:
-#  name: flink-kubernetes-operator
-#  namespace: argocd
-#spec:
-#    project: default
-#    source:
-#      repoURL: https://github.com/apache/flink-kubernetes-operator
-#      targetRevision: main
-#      path: helm/flink-kubernetes-operator
-#    helm:
-#      values:
-#        valueFiles:
-#          - values.yaml
-#    destination:
-#      name: in-cluster
-#      namespace: 'argocd'
-#    syncPolicy:
-#      automated: # automated sync by default retries failed attempts 5 times with following delays between attempts ( 5s, 10s, 20s, 40s, 80s ); retry controlled using `retry` field.
-#        prune: true # Specifies if resources should be pruned during auto-syncing ( false by default ).
-#        selfHeal: true # Specifies if partial app sync should be executed when resources are changed only in target Kubernetes cluster and no git change detected ( false by default ).
-#        allowEmpty: false # Allows deleting all application resources during automatic syncing ( false by default ).
-#      syncOptions:
-#        - CreateNamespace=true
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: flink-kubernetes-operator
+  namespace: argocd
+spec:
+    project: default
+    source:
+      repoURL: https://github.com/apache/flink-kubernetes-operator
+      targetRevision: main
+      path: helm/flink-kubernetes-operator
+    destination:
+      name: in-cluster
+      namespace: 'argocd'
+    syncPolicy:
+      automated: # automated sync by default retries failed attempts 5 times with following delays between attempts ( 5s, 10s, 20s, 40s, 80s ); retry controlled using `retry` field.
+        prune: true # Specifies if resources should be pruned during auto-syncing ( false by default ).
+        selfHeal: true # Specifies if partial app sync should be executed when resources are changed only in target Kubernetes cluster and no git change detected ( false by default ).
+        allowEmpty: false # Allows deleting all application resources during automatic syncing ( false by default ).
+      syncOptions:
+        - CreateNamespace=true
