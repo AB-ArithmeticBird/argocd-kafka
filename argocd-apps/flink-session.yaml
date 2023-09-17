@@ -28,7 +28,7 @@ spec:
             - mountPath: /flink-data
               name: flink-volume
       volumes:
-        - name: flink-volume
+        - name: pvc-eb63d31b-9125-4f5c-b8bb-5da40bf6f614
           hostPath:
             # directory location on host
             path: /tmp/flink
