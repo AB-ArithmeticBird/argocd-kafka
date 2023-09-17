@@ -9,6 +9,10 @@ spec:
       repoURL: https://github.com/apache/flink-kubernetes-operator
       targetRevision: main
       path: helm/flink-kubernetes-operator
+    helm:
+      values:
+        valueFiles:
+          - myvals.yaml
     destination:
       name: in-cluster
       namespace: 'argocd'
