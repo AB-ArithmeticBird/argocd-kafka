@@ -1,18 +1,18 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: my-schema-registry
-  namespace: argocd
-spec:
-  project: default
-  source:
-    repoURL: https://github.com/AB-ArithmeticBird/argocd-kafka.git
-    targetRevision: HEAD
-    path: connect-cluster/my-schema-registry
-  destination:
-    name: in-cluster
-    namespace: default
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
+#apiVersion: argoproj.io/v1alpha1
+#kind: Application
+#metadata:
+#  name: my-schema-registry
+#  namespace: argocd
+#spec:
+#  project: default
+#  source:
+#    repoURL: https://github.com/AB-ArithmeticBird/argocd-kafka.git
+#    targetRevision: HEAD
+#    path: connect-cluster/my-schema-registry
+#  destination:
+#    name: in-cluster
+#    namespace: default
+#  syncPolicy:
+#    automated:
+#      prune: true
+#      selfHeal: true

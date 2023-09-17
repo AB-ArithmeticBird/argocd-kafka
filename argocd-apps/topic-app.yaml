@@ -1,18 +1,18 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: topicapp
-  namespace: argocd
-spec:
-  project: default
-  source:
-    repoURL: https://github.com/AB-ArithmeticBird/argocd-kafka.git
-    targetRevision: HEAD
-    path: apk-cluster/topics
-  destination:
-    name: in-cluster
-    namespace: default
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
+#apiVersion: argoproj.io/v1alpha1
+#kind: Application
+#metadata:
+#  name: topicapp
+#  namespace: argocd
+#spec:
+#  project: default
+#  source:
+#    repoURL: https://github.com/AB-ArithmeticBird/argocd-kafka.git
+#    targetRevision: HEAD
+#    path: apk-cluster/topics
+#  destination:
+#    name: in-cluster
+#    namespace: default
+#  syncPolicy:
+#    automated:
+#      prune: true
+#      selfHeal: true
