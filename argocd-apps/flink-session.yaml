@@ -26,17 +26,17 @@ spec:
     parallelism: 4
     upgradeMode: stateless
 
-#---
-#apiVersion: flink.apache.org/v1beta1
-#kind: FlinkSessionJob
-#metadata:
-#  name: basic-session-job-example2
-#spec:
-#  deploymentName: basic-session-deployment-example
-#  job:
-#    jarURI: https://repo1.maven.org/maven2/org/apache/flink/flink-examples-streaming_2.12/1.16.1/flink-examples-streaming_2.12-1.16.1.jar
-#    parallelism: 2
-#    upgradeMode: stateless
-#    entryClass: org.apache.flink.streaming.examples.statemachine.StateMachineExample
+---
+apiVersion: flink.apache.org/v1beta1
+kind: FlinkSessionJob
+metadata:
+  name: basic-session-job-example2
+spec:
+  deploymentName: basic-session-deployment-example
+  job:
+    jarURI: https://repo1.maven.org/maven2/org/apache/flink/flink-examples-streaming_2.12/1.16.1/flink-examples-streaming_2.12-1.16.1.jar
+    parallelism: 2
+    upgradeMode: stateless
+    entryClass: org.apache.flink.streaming.examples.statemachine.StateMachineExample
 
 
