@@ -5,6 +5,12 @@ metadata:
 spec:
   image: flink:1.17
   flinkVersion: v1_17
+  flinkConfiguration:
+    taskmanager.numberOfTaskSlots: "2"
+    state.savepoints.dir: file:///flink-data/savepoints
+    state.checkpoints.dir: file:///flink-data/checkpoints
+    high-availability: org.apache.flink.kubernetes.highavailability.KubernetesHaServicesFactory
+    high-availability.storageDir: file:///flink-data/ha
   jobManager:
     resource:
       memory: "2048m"
@@ -14,6 +20,20 @@ spec:
       memory: "2048m"
       cpu: 1
   serviceAccount: flink
+  podTemplate:
+    spec:
+      containers:
+        - name: flink-main-container
+          volumeMounts:
+            - mountPath: /flink-data
+              name: flink-volume
+      volumes:
+        - name: flink-volume
+          hostPath:
+            # directory location on host
+            path: /tmp/flink
+            # this field is optional
+            type: Directory
 ---
 apiVersion: flink.apache.org/v1beta1
 kind: FlinkSessionJob
