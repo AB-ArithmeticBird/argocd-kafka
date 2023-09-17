@@ -38,3 +38,5 @@ spec:
     parallelism: 2
     upgradeMode: stateless
     entryClass: org.apache.flink.streaming.examples.statemachine.StateMachineExample
+
+
